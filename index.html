@@ -4,111 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Bloco</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
-
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.container{
-    max-width: 450px;
-    margin: auto;
-    background-color: rgb(143, 203, 255);
-    padding: 20px;
-    border-radius: 10px;
-}
-.container h1{
-    font-size: 33px;
-    text-align: center;
-    line-height: 30px;
-    margin: 20px;
-    text-transform: uppercase;
-}
-
-input{
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 7px;
-    padding: 10px;
-    border-radius: 2px;
-    border: 1px solid transparent;
-}
-
-button{
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px 3px;
-    border-radius: 2px;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: 0;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-    </style>
+    <title>Calculadora Gráfica</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>CALCULADORA GRÁFICA</h1>
+    <h2>CALCULADORA BLOCOS E FOLHAS</h2>
+
     <div class="container">
-        <h1>Calculadora de Bloco Azul</h1>
-        <input id="qBloco" type="number" name="qBloco" placeholder="Quantidade de Blocos"/> <br>
-        <input id="qFbloco" type="number" name="qFbloco" placeholder="Quantidade de Folhas no Bloco"/> <br>
-        <input id="qFolha" type="number" name="qFolha" placeholder="Quantidade Impressa na Folha"/> <br>
-        <input id="nIni" type="number" name="nIni" placeholder="Número Inicial"/> <br>
-        <input id="nFim" type="number" name="nFim" placeholder="Número Final"/> <br> <br>
-
-        <button onclick="calcular()">Calcular</button>
-
-        <div id="resultado"></div>
+        <a href="calcAzul.html">
+            <div class="b1">
+                <span>BLOCO AZUL</span>
+            </div>
+        </a>
+        <div class="b2">
+            <span>BLOCO 6 EM 1</span>
+        </div>
     </div>
-
-<script>
-
-    let inputqBloco = document.getElementById("qBloco");
-    let inputqFbloco = document.getElementById("qFbloco");
-    let inputqFolha = document.getElementById("qFolha");
-    let inputnIni = document.getElementById("nIni");
-    let inputnFim = document.getElementById("nFim");
-
-    let resultado = document.getElementById("resultado");
-
-    function calcular(){
-        // alert("Calculando...");
-
-        let qBloco = inputqBloco.value;
-        let qFbloco = inputqFbloco.value;
-        let qFolha = inputqFolha.value;
-        let nIni = inputnIni.value;
-        let nFim = inputnFim.value;
-
-        // resultado.innerHTML = `<p> ${qBloco}`
-        // resultado.innerHTML += `<p> ${qFbloco}`
-        // resultado.innerHTML += `<p> ${qFolha}`
-        // resultado.innerHTML += `<p> ${nIni}`
-        // resultado.innerHTML += `<p> ${nFim}`
-
-
-        let rFolha = parseInt(qBloco) * parseInt(qFbloco);
-        let rBloco = parseInt(rFolha) / parseInt(qFolha);
-        let nComeco = parseInt(nIni) + parseInt(rBloco) - 1;
-        let nFinal = parseInt(nComeco) + parseInt(rBloco);
-
-        // resultado.innerHTML = `<p>${rFolha}</p>`
-        // resultado.innerHTML += `<p>${rBloco}</p>`
-        // resultado.innerHTML += `<p>${nComeco}</p>`
-        // resultado.innerHTML += `<p>${nFinal}</p>`
-
-        resultado.innerHTML = `<p> CIMA | INICIO: ${nIni} | FIM: ${nComeco}</p>`
-        resultado.innerHTML += `<p> BAIXO | INICIO: ${nComeco+1} | FIM: ${nFinal}</p>`
-
-    }
-
-
-</script>
-
+    <div class="container2">
+        <div class="b3">
+            <span>BLOCO 4 EM 1</span>
+        </div>
+        <div class="b4">
+            <span>BLOCO 3 EM 1</span>
+        </div>
+    </div>
+    <div class="container3">
+        <div class="c1">
+            <span>CORTES PAPEL F1</span>
+        </div>
+        <div class="c2">
+            <span>CORTES PAPEL A4</span>
+        </div>
+    </div>
 </body>
 </html>
