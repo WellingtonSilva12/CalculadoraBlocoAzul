@@ -66,15 +66,23 @@ button{
 
     </style>
 
+        <!-- qPedaco = int (input("Quantidade de Pedaços: "))
+        fMaquina = int (input("Formato da Máquina: "))
+        qFolha = int (input("Quantidade Impressa na Folha: "))
+
+
+        rFolha = qPedaco / fMaquina
+        resFolha = rFolha / qFolha
+
+
+        print(" Quantidade de Folha F1: ", resFolha, "Folhas" ) -->
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de Bloco Azul</h1>
-        <input id="qBloco" type="number" name="qBloco" placeholder="Quantidade de Blocos"/> <br>
-        <input id="qFbloco" type="number" name="qFbloco" placeholder="Quantidade de Folhas no Bloco"/> <br>
-        <input id="qFolha" type="number" name="qFolha" placeholder="Quantidade Impressa na Folha"/> <br>
-        <input id="nIni" type="number" name="nIni" placeholder="Número Inicial"/> <br>
-        <input id="nFim" type="number" name="nFim" placeholder="Número Final"/> <br> <br>
+        <h1>Calculadora de Corte - Formato 1</h1>
+        <input id="qPedaco" type="number" name="qPedaco" placeholder="Quantidade de Pedaços"/> <br>
+        <input id="fMaquina" type="number" name="fMaquina" placeholder="Formato da Máquina"/> <br>
+        <input id="qFolha" type="number" name="qFolha" placeholder="Quantidade Impressa na Folha"/> <br><br>
 
         <button onclick="calcular()">Calcular</button>
 
@@ -84,22 +92,19 @@ button{
 
 <script>
 
-    let inputqBloco = document.getElementById("qBloco");
-    let inputqFbloco = document.getElementById("qFbloco");
-    let inputqFolha = document.getElementById("qFolha");
-    let inputnIni = document.getElementById("nIni");
-    let inputnFim = document.getElementById("nFim");
+    var inputqPedaco = document.getElementById("qPedaco");
+    var inputfMaquina = document.getElementById("fMaquina");
+    var inputqFolha = document.getElementById("qFolha");
 
-    let resultado = document.getElementById("resultado");
+
+    var resultado = document.getElementById("resultado");
 
     function calcular(){
         // alert("Calculando...");
 
-        let qBloco = inputqBloco.value;
-        let qFbloco = inputqFbloco.value;
-        let qFolha = inputqFolha.value;
-        let nIni = inputnIni.value;
-        let nFim = inputnFim.value;
+        var qPedaco = inputqPedaco.value;
+        var fMaquina = inputfMaquina.value;
+        var qFolha = inputqFolha.value;
 
         // resultado.innerHTML = `<p> ${qBloco}`
         // resultado.innerHTML += `<p> ${qFbloco}`
@@ -108,18 +113,17 @@ button{
         // resultado.innerHTML += `<p> ${nFim}`
 
 
-        let rFolha = parseInt(qBloco) * parseInt(qFbloco);
-        let rBloco = parseInt(rFolha) / parseInt(qFolha);
-        let nComeco = parseInt(nIni) + parseInt(rBloco) - 1;
-        let nFinal = parseInt(nComeco) + parseInt(rBloco);
+        var rFolha = parseInt(qPedaco) / parseInt(fMaquina);
+        var resFolha = parseInt(rFolha) / parseInt(qFolha);
+
 
         // resultado.innerHTML = `<p>${rFolha}</p>`
         // resultado.innerHTML += `<p>${rBloco}</p>`
         // resultado.innerHTML += `<p>${nComeco}</p>`
         // resultado.innerHTML += `<p>${nFinal}</p>`
 
-        resultado.innerHTML = `<p> CIMA | INICIO: ${nIni} | FIM: ${nComeco}</p>`
-        resultado.innerHTML += `<p> BAIXO | INICIO: ${nComeco+1} | FIM: ${nFinal}</p>`
+        resultado.innerHTML = `<p> RESULTADO: ${resFolha} Folhas</p>`
+    
 
     }
 
