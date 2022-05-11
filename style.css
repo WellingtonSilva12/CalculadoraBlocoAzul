@@ -27,12 +27,13 @@ h1 {
   line-height: 110%;
   padding-top: 1.6rem;
   text-transform: uppercase;
+  color: #3d3f66;
 }
 h1::after {
   content: '';
   width: 80%;
   height: 0.3rem;
-  background-color: blueviolet;
+  background-color: #7a55fd;
   display: flex;
   margin: 0.5rem auto;
 }
@@ -41,6 +42,7 @@ h2 {
   font-weight: 400;
   text-align: center;
   padding-bottom: 3rem;
+  color: #3d3f66;
 }
 span {
   text-align: center;
@@ -134,7 +136,7 @@ a {
 .rodape {
   font-size: 1rem;
   text-align: center;
-  color: blueviolet;
+  color: #3d3f66;
 }
 .rodape a {
   text-decoration: none;
