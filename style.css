@@ -12,6 +12,9 @@ body {
   background: aliceblue;
   font-size: 1.8rem;
 }
+ul {
+  list-style: none;
+}
 .wrapper {
   width: 30.5rem;
   margin-inline: auto;
@@ -22,7 +25,7 @@ h1 {
   font-size: 3.3rem;
   text-align: center;
   line-height: 110%;
-  margin-top: 5rem;
+  padding-top: 1.6rem;
   text-transform: uppercase;
 }
 h1::after {
@@ -54,20 +57,20 @@ a {
   padding-bottom: 2.4rem;
 }
 
-.b1 {
+.container .b1 {
   display: flex;
-  background-color: rgb(111, 198, 228);
+  background-color: #ff6968;
   width: 14rem;
-  height: 10rem;
-  border-radius: 1.5rem 1.5rem 0 1.5rem;
+  height: 12rem;
+  border-radius: 1rem;
   color: white;
 }
-.b2 {
+.container .b2 {
   display: flex;
-  background-color: rgb(98, 175, 98);
+  background-color: #7a55fd;
   width: 14rem;
-  height: 10rem;
-  border-radius: 1.5rem 1.5rem 1.5rem 0;
+  height: 12rem;
+  border-radius: 1rem;
   color: white;
 }
 
@@ -78,52 +81,59 @@ a {
   padding-bottom: 2.4rem;
 }
 
-.b3 {
+.container2 .b3 {
   display: flex;
-  background-color: blueviolet;
+  background-color: #ff8560;
   width: 14rem;
-  height: 10rem;
-  border-radius: 1.5rem 0 1.5rem 1.5rem;
+  height: 12rem;
+  border-radius: 1rem;
   color: white;
 }
-.b4 {
+.container2 .b4 {
   display: flex;
-  background-color: blueviolet;
+  background-color: #29c2fb;
   width: 14rem;
-  height: 10rem;
-  border-radius: 0 1.5rem 1.5rem 1.5rem;
+  height: 12rem;
+  border-radius: 1rem;
   color: white;
 }
 
 .container3 {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.c1 {
-  display: flex;
-  background-color: blueviolet;
-  width: 30rem;
-  height: 6rem;
-  border-radius: 1.5rem;
-  text-align: center;
-  color: white;
-}
-.c2 {
-  display: flex;
-  background-color: blueviolet;
-  width: 30rem;
-  height: 6rem;
-  border-radius: 1.5rem;
-  text-align: center;
+  justify-content: space-around;
   margin: auto;
+  padding-bottom: 2.4rem;
+}
+.container3 .c1 {
+  display: flex;
+  background-color: #5863f9;
+  width: 14rem;
+  height: 12rem;
+  border-radius: 1rem;
   color: white;
+}
+.container3 .c2 {
+  display: flex;
+  background-color: #99db45;
+  width: 14rem;
+  height: 12rem;
+  border-radius: 1rem;
+  color: white;
+}
+.rodape .social-links ul {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 4rem;
+  justify-content: center;
+  margin-bottom: -0.8rem;
+}
+.rodape .social-links ul li {
+  cursor: pointer;
 }
 
 .rodape {
   font-size: 1rem;
   text-align: center;
-  padding-top: 5rem;
   color: blueviolet;
 }
 .rodape a {

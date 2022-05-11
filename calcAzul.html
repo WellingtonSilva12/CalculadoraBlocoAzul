@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora Bloco</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -38,7 +43,7 @@
         font-size: 3.3rem;
         text-align: center;
         line-height: 110%;
-        margin-top: 7.2rem;
+        margin-top: 5rem;
         margin-bottom: 2.4rem;
         text-transform: uppercase;
         color: white;
@@ -49,6 +54,7 @@
         padding: 1.5rem;
         border-radius: 15px;
         border: none;
+        margin-bottom: -1rem;
       }
 
       button {
@@ -90,13 +96,7 @@
         placeholder="Quantidade de Folhas no Bloco"
       />
       <br />
-      <input
-        id="qFolha"
-        type="number"
-        name="qFolha"
-        placeholder="Quantidade Impressa na Folha"
-      />
-      <br />
+
       <input id="nIni" type="number" name="nIni" placeholder="Número Inicial" />
       <br />
       <input id="nFim" type="number" name="nFim" placeholder="Número Final" />
@@ -123,7 +123,7 @@
 
         let qBloco = inputqBloco.value
         let qFbloco = inputqFbloco.value
-        let qFolha = inputqFolha.value
+        let qFolha = 2
         let nIni = inputnIni.value
         let nFim = inputnFim.value
 
@@ -143,8 +143,8 @@
         // resultado.innerHTML += `<p>${nComeco}</p>`
         // resultado.innerHTML += `<p>${nFinal}</p>`
 
-        resultado.innerHTML = `<p> CIMA | INICIO: ${nIni} | FIM: ${nComeco}</p>`
-        resultado.innerHTML += `<p> BAIXO | INICIO: ${
+        resultado.innerHTML = `<p> <i class='bx bxs-up-arrow'></i> | INICIO: ${nIni} | FIM: ${nComeco}</p>`
+        resultado.innerHTML += `<p> <i class='bx bxs-down-arrow'></i> | INICIO: ${
           nComeco + 1
         } | FIM: ${nFinal}</p>`
       }
