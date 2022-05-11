@@ -1,105 +1,122 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora Bloco</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-body{
-    background-color: rgb(111, 198, 228);
-}
-.container{
-    max-width: 370px;
-    max-height: 814px;
-    height: 100vh;
-    width: 100vw;
-    margin: auto;
-    background-color: rgb(111, 198, 228);
-    padding: 20px;
-    border-radius: 10px;
-}
-.container h1{
-    font-size: 33px;
-    text-align: center;
-    line-height: 40px;
-    margin:15vh 20px 40px 20px;
-    text-transform: uppercase;
-    color: white;
-}
+      * {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        font-size: 62.5%; /* 1rem = 10px */
+      }
+      .wrapper {
+        width: 30.5rem;
+        margin-inline: auto;
+        padding-inline: 2.4rem;
+      }
+      body {
+        background-color: rgb(111, 198, 228);
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(111, 198, 228);
+        border-radius: 1rem;
+      }
+      .container h1 {
+        font-size: 2.6rem;
+        text-align: center;
+        line-height: 110%;
+        margin-top: 5rem;
+        margin-bottom: 2.4rem;
+        text-transform: uppercase;
+        color: white;
+      }
 
-input{
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 7px;
-    padding: 10px;
-    border-radius: 15px;
-    border: 1px solid transparent;
-}
+      input {
+        padding: 1rem;
+        border-radius: 1.5rem;
+        border: none;
+      }
 
-button{
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px 3px;
-    border-radius: 15px;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: 0;
-    cursor: pointer;
-    margin-bottom: 10px;
-    color: rgb(111, 198, 228);
-    }
-    .voltar{
+      button {
+        width: 100%;
+        padding: 1rem 0.3rem;
+        border-radius: 15px;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 0;
+        cursor: pointer;
+        margin-top: 5rem;
+        margin-bottom: -4rem;
+        color: rgb(111, 198, 228);
+      }
+      .voltar {
         color: white;
         background-color: transparent;
         border: 1px solid white;
-
-    }
-
+      }
     </style>
-
-</head>
-<body>
-    <div class="container">
-        <h1>Calculadora de Bloco 6 em 1</h1>
-        <input id="qPedaco" type="number" name="qPedaco" placeholder="Quantidade de Pedaços"/> <br>
-        <input id="fMaquina" type="number" name="fMaquina" placeholder="Formato da Máquina"/> <br>
-        <input id="qFolha" type="number" name="qFolha" placeholder="Quantidade Impressa na Folha"/> <br>
-        <!-- <input id="nIni" type="number" name="nIni" placeholder="Número Inicial"/> <br>
+  </head>
+  <body>
+    <div class="container wrapper">
+      <h1>Calculadora de Bloco 6 em 1</h1>
+      <input
+        id="qPedaco"
+        type="number"
+        name="qPedaco"
+        placeholder="Quantidade de Pedaços"
+      />
+      <br />
+      <input
+        id="fMaquina"
+        type="number"
+        name="fMaquina"
+        placeholder="Formato da Máquina"
+      />
+      <br />
+      <input
+        id="qFolha"
+        type="number"
+        name="qFolha"
+        placeholder="Quantidade Impressa na Folha"
+      />
+      <br />
+      <!-- <input id="nIni" type="number" name="nIni" placeholder="Número Inicial"/> <br>
         <input id="nFim" type="number" name="nFim" placeholder="Número Final"/> <br> <br> -->
 
-        <button onclick="calcular()">Calcular</button>
+      <button onclick="calcular()">Calcular</button>
 
-    <a href="index.html"><button class="voltar">voltar</button></a>
-        <div id="resultado"></div>
+      <a href="index.html"><button class="voltar">voltar</button></a>
+      <div id="resultado"></div>
     </div>
 
-<script>
+    <script>
+      let inputqPedaco = document.getElementById('qPedaco')
+      let inputfMaquina = document.getElementById('fMaquina')
+      let inputqFolha = document.getElementById('qFolha')
+      let inputnIni = document.getElementById('nIni')
+      let inputnFim = document.getElementById('nFim')
 
-    let inputqPedaco = document.getElementById("qPedaco");
-    let inputfMaquina = document.getElementById("fMaquina");
-    let inputqFolha = document.getElementById("qFolha");
-    let inputnIni = document.getElementById("nIni");
-    let inputnFim = document.getElementById("nFim");
+      let resultado = document.getElementById('resultado')
 
-    let resultado = document.getElementById("resultado");
-
-    function calcular(){
+      function calcular() {
         // alert("Calculando...");
 
-        let qPedaco = inputqPedaco.value;
-        let fMaquina = inputfMaquina.value;
-        let qFolha = inputqFolha.value;
-        let nIni = inputnIni.value;
-        let nFim = inputnFim.value;
+        let qPedaco = inputqPedaco.value
+        let fMaquina = inputfMaquina.value
+        let qFolha = inputqFolha.value
+        let nIni = inputnIni.value
+        let nFim = inputnFim.value
 
         // resultado.innerHTML = `<p> ${qBloco}`
         // resultado.innerHTML += `<p> ${qFbloco}`
@@ -107,10 +124,8 @@ button{
         // resultado.innerHTML += `<p> ${nIni}`
         // resultado.innerHTML += `<p> ${nFim}`
 
-
-        let folha = parseInt(qPedaco) / parseInt(fMaquina);
-        let resFolha = parseInt(folha) / parseInt(qFolha);
-
+        let folha = parseInt(qPedaco) / parseInt(fMaquina)
+        let resFolha = parseInt(folha) / parseInt(qFolha)
 
         // resultado.innerHTML = `<p>${rFolha}</p>`
         // resultado.innerHTML += `<p>${rBloco}</p>`
@@ -118,11 +133,7 @@ button{
         // resultado.innerHTML += `<p>${nFinal}</p>`
 
         resultado.innerHTML = `<p> CIMA | INICIO: ${resFolha} | FIM: ${nComeco}</p>`
-
-    }
-
-
-</script>
-
-</body>
+      }
+    </script>
+  </body>
 </html>
