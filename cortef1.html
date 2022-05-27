@@ -68,17 +68,6 @@
         font-weight: bold;
       }
     </style>
-
-    <!-- qPedaco = int (input("Quantidade de Pedaços: "))
-        fMaquina = int (input("Formato da Máquina: "))
-        qFolha = int (input("Quantidade Impressa na Folha: "))
-
-
-        rFolha = qPedaco / fMaquina
-        resFolha = rFolha / qFolha
-
-
-        print(" Quantidade de Folha F1: ", resFolha, "Folhas" ) -->
   </head>
   <body>
     <div class="container wrapper">
@@ -119,27 +108,14 @@
       var resultado = document.getElementById('resultado')
 
       function calcular() {
-        // alert("Calculando...");
-
         var qPedaco = inputqPedaco.value
         var fMaquina = inputfMaquina.value
         var qFolha = inputqFolha.value
 
-        // resultado.innerHTML = `<p> ${qBloco}`
-        // resultado.innerHTML += `<p> ${qFbloco}`
-        // resultado.innerHTML += `<p> ${qFolha}`
-        // resultado.innerHTML += `<p> ${nIni}`
-        // resultado.innerHTML += `<p> ${nFim}`
-
         var rFolha = parseInt(qPedaco) / parseInt(fMaquina)
         var resFolha = parseInt(rFolha) / parseInt(qFolha)
 
-        // resultado.innerHTML = `<p>${rFolha}</p>`
-        // resultado.innerHTML += `<p>${rBloco}</p>`
-        // resultado.innerHTML += `<p>${nComeco}</p>`
-        // resultado.innerHTML += `<p>${nFinal}</p>`
-
-        resultado.innerHTML = `<p> ${resFolha} Folhas</p>`
+        resultado.innerHTML = `<p> ${resFolha.toFixed(2)} Folhas</p>`
       }
     </script>
   </body>
