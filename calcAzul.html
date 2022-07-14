@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,30 +24,20 @@
         font-size: 62.5%; /* 1rem = 10px */
       }
       .wrapper {
-        width: 30.5rem;
+        width: 32.5rem;
         margin-inline: auto;
         padding-inline: 2.4rem;
       }
       body {
-        background-color: rgb(111, 198, 228);
+        background-color: aliceblue;
       }
       .container {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        background-color: rgb(111, 198, 228);
         border-radius: 1rem;
 
         overflow: hidden;
-      }
-      .container h1 {
-        font-size: 3.3rem;
-        text-align: center;
-        line-height: 110%;
-        margin-top: 5rem;
-        margin-bottom: 2.4rem;
-        text-transform: uppercase;
-        color: white;
       }
 
       input {
@@ -81,7 +72,10 @@
   </head>
   <body>
     <div class="container wrapper">
-      <h1>Calculadora de Bloco Azul</h1>
+      <header class="container-header wrapper">
+        <h1>Calculadora Gráfica</h1>
+        <h2>Calcule Blocos e Folhas</h2>
+      </header>
       <input
         id="qBloco"
         type="number"
@@ -105,7 +99,6 @@
 
       <button onclick="calcular()">Calcular</button>
 
-      <a href="index.html"><button class="voltar">voltar</button></a>
       <div id="resultado"></div>
     </div>
 
@@ -119,29 +112,16 @@
       let resultado = document.getElementById('resultado')
 
       function calcular() {
-        // alert("Calculando...");
-
         let qBloco = inputqBloco.value
         let qFbloco = inputqFbloco.value
         let qFolha = 2
         let nIni = inputnIni.value
         let nFim = inputnFim.value
 
-        // resultado.innerHTML = `<p> ${qBloco}`
-        // resultado.innerHTML += `<p> ${qFbloco}`
-        // resultado.innerHTML += `<p> ${qFolha}`
-        // resultado.innerHTML += `<p> ${nIni}`
-        // resultado.innerHTML += `<p> ${nFim}`
-
         let rFolha = parseInt(qBloco) * parseInt(qFbloco)
         let rBloco = parseInt(rFolha) / parseInt(qFolha)
         let nComeco = parseInt(nIni) + parseInt(rBloco) - 1
         let nFinal = parseInt(nComeco) + parseInt(rBloco)
-
-        // resultado.innerHTML = `<p>${rFolha}</p>`
-        // resultado.innerHTML += `<p>${rBloco}</p>`
-        // resultado.innerHTML += `<p>${nComeco}</p>`
-        // resultado.innerHTML += `<p>${nFinal}</p>`
 
         resultado.innerHTML = `<p> <i class='bx bxs-up-arrow'></i> | INICIO: ${nIni} | FIM: ${nComeco}</p>`
         resultado.innerHTML += `<p> <i class='bx bxs-down-arrow'></i> | INICIO: ${
