@@ -140,24 +140,9 @@ a {
   border-radius: 0.5rem;
   color: white;
 }
-.rodape .social-links ul {
-  display: flex;
-  gap: 1.2rem;
-  font-size: 4rem;
-  justify-content: center;
-  margin-bottom: -0.8rem;
-}
-.rodape .social-links ul li {
-  cursor: pointer;
-}
-
-.rodape {
-  display: none;
-  font-size: 1rem;
-  text-align: center;
-  color: #3d3f66;
-}
-.rodape a {
-  text-decoration: none;
-  color: inherit;
+.content {
+  position: relative;
+  bottom: -250px;
+  z-index: 500;
+  height: 100vh;
 }

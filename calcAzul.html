@@ -76,31 +76,62 @@
         <h1>Calculadora Gráfica</h1>
         <h2>Calcule Blocos e Folhas</h2>
       </header>
-      <input
-        id="qBloco"
-        type="number"
-        name="qBloco"
-        placeholder="Quantidade de Blocos"
-      />
-      <br />
-      <input
-        id="qFbloco"
-        type="number"
-        name="qFbloco"
-        placeholder="Quantidade de Folhas no Bloco"
-      />
-      <br />
-
-      <input id="nIni" type="number" name="nIni" placeholder="Número Inicial" />
-      <br />
-      <input id="nFim" type="number" name="nFim" placeholder="Número Final" />
-      <br />
-      <br />
-
-      <button onclick="calcular()">Calcular</button>
-
-      <div id="resultado"></div>
+      <div class="content">
+        <input
+          id="qBloco"
+          type="number"
+          name="qBloco"
+          placeholder="Quantidade de Blocos"
+        />
+        <br />
+        <input
+          id="qFbloco"
+          type="number"
+          name="qFbloco"
+          placeholder="Quantidade de Folhas no Bloco"
+        />
+        <br />
+        <input
+          id="nIni"
+          type="number"
+          name="nIni"
+          placeholder="Número Inicial"
+        />
+        <br />
+        <input id="nFim" type="number" name="nFim" placeholder="Número Final" />
+        <br />
+        <br />
+        <button onclick="calcular()">Calcular</button>
+        <div id="resultado"></div>
+      </div>
     </div>
+
+    <section class="container-buttons wrapper">
+      <div class="content-btn-up">
+        <a href="calcAzul.html">
+          <div class="b1">
+            <span>BLOCO AZUL</span>
+          </div>
+        </a>
+        <a href="Bloc6em1.html">
+          <div class="b2">
+            <span>BLOCO 6 EM 1</span>
+          </div>
+        </a>
+      </div>
+      <div class="content-btn-down">
+        <a href="cortef1.html">
+          <div class="c1">
+            <span>CORTE F1</span>
+          </div>
+        </a>
+        <a href="cortea4.html">
+          <div class="c2">
+            <span>CORTE A4</span>
+          </div>
+        </a>
+      </div>
+    </section>
 
     <script>
       let inputqBloco = document.getElementById('qBloco')
